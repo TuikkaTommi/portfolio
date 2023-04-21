@@ -1,0 +1,41 @@
+<!-- Tuloslistan template, eli komponentin html -->
+
+<h1>Scores</h1>
+
+<!-- Jos käyttäjä ei ole kirjautunut sisään, näytetään sisäänkirjautumisnappi ja teksti -->
+<div *ngIf="!logged" class="login">
+  <p>Please login to add or delete your scores</p>
+  <button type="button" class="login-button" routerLink="/login" >Login</button>
+</div>
+
+<!-- Jos käyttäjä on kirjautunut, näytetään kirjattu käyttäjä, uuden tuloksen lisäysnappi, sekä uloskirjaus -->
+<div *ngIf="logged">
+
+  <p>Currently logged in as {{loggedUser}}</p>
+  <button type="button" class="new-button" routerLink="/new" >Add new score</button>
+
+  <button type="button" class="logout-button" (click)="logout()" >Logout</button>
+</div>
+
+
+<ul class="scores">
+  <!-- *ngFor on Angularin toistodirektiivi. Se toistaa li-elementin jokaiselle scores-taulukon alkiolle. -->
+  <li *ngFor="let score of scores">
+    
+      <span [ngClass]="{'me': this.score.player === loggedUser, 'badge': this.score.player !== loggedUser}" >{{score.id}}</span><br>
+      <!-- Haetaan loremflickr-palvelusta kuvituskuva tulokselle. {{score.id}} on asetettu url-osoitteen loppuun,
+      jotta jokaiselle tulokselle tulee eri kuva. -->
+      <img
+    src="https://loremflickr.com/320/240/discgolf?id={{score.id}}"
+    alt="kuvituskuva"
+  /> <br>
+      <b>Course: </b> {{score.coursename}} <br>
+      <b>Player:</b> {{score.player}}<br>
+      <b>Score:</b> {{score.score}}<br>
+      <b>Date:</b> {{score.date}}
+    
+    <!-- Poistonappi näkyy vain kirjautuneille ja vain käyttäjän omissa tuloksissa -->   
+    <button *ngIf="logged && score.player === loggedUser" type="button" class="delete" title="delete score" 
+      (click)="delete(score)">x</button>
+  </li>
+</ul>

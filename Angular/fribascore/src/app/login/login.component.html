@@ -1,0 +1,18 @@
+<!-- Kirjautumissivun template, eli komponentin html -->
+
+<h1>Login</h1>
+
+<div class="form">
+  <button type="button" [routerLink]="['/scores']">Back to list</button><br>
+
+  <label for="username">Username: </label>
+  <input id="username" #username placeholder="Enter username"/><br>
+
+  <label for="pw">Password: </label>
+  <input type="password" id="pw" placeholder="Enter password" #pw /><br>
+
+  <!-- (click) lähettää inputtien arvot login()-metodille ja tyhjentää inputit -->
+  <button type="button" class="add-button" [routerLink]="['/scores']" (click)="login(username.value, pw.value);" >
+    Login
+  </button>
+</div>

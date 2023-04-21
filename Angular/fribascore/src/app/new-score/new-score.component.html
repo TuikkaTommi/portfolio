@@ -1,0 +1,21 @@
+<!-- Uuden tuloksen lomakkeen template, eli komponentin html -->
+
+<h1>Add a new score</h1>
+
+<div class="form">
+  <button type="button" [routerLink]="['/scores']">Back to list</button><br>
+
+  <label for="course">Course name: </label>
+  <input id="course" #course placeholder="Enter name of the course"/><br>
+
+  <label for="score">Score: </label>
+  <input type="number" id="score" placeholder="Enter your score" #score /><br>
+
+  <label for="date">Date: </label>
+  <input type="date" id="date" #date /><br>
+
+  <!-- (click) lähettää inputtien arvot add()-metodille ja tyhjentää inputit -->
+  <button type="button" class="add-button" [routerLink]="['/scores']" (click)="add(course.value, score.value, loggedUser, date.value); course.value=''; score.value='0'; " >
+    Add score
+  </button>
+</div>

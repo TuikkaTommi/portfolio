@@ -1,0 +1,21 @@
+/* new-score komponentin tyylimäärittelyt */
+
+
+h1 {
+  margin: 1em;
+}
+
+.form {
+  margin: 2em;
+  
+}
+
+button {
+  padding: 0.5em;
+  background-color: #405061;
+  color: white;
+}
+
+input {
+  margin: 0.5em 1em;
+}

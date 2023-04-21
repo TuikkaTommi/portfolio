@@ -1,0 +1,110 @@
+/* score-list komponentin tyylimäärittelyt */
+
+
+h1 {
+  margin: 1em;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+button {
+  padding: 0.5em;
+  background-color: #405061;
+  color: white;
+}
+
+.login-button, .logout-button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+
+
+.scores {
+  margin: 0 auto;
+  list-style-type: none;
+  width: 34em;
+  padding-bottom: 4em;
+}
+
+
+.scores li {
+  position: relative;
+  color: #333;
+  text-decoration: none;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .5em 0;
+  text-align: center;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+}
+
+.scores li:hover {
+  left: .1em;
+}
+
+ .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #405061;
+  position: relative;
+  left: -1px;
+  top: -6px;
+  height: 1.8em;
+  width: 97%;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.me {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: green;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -6px;
+  height: 1.8em;
+  width: 100%;
+  text-align: center;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+
+.new-button {
+  position: relative;
+  left: 47.5%;
+  margin: 1em;
+}
+
+
+.add-button:hover {
+  color: white;
+  background-color: #42545C;
+}
+
+button.delete {
+  position: absolute;
+  left: 460px;
+  top: 4px;
+  background-color: white;
+  color:  #525252;
+  font-size: 1.1rem;
+  margin: 0;
+  padding: 1px 10px 3px 10px;
+}
+
+button.delete:hover {
+  background-color: red;
+  color: white;
+}
