@@ -5,5 +5,5 @@ This is a (WIP) portfolio-repository for my web-development related projects. Di
 ## My contact info
 
 Tommi Tuikka
-Email: *coming soon*
+Email: *coming soon* <br>
 Student email: N5008@student.jamk.fi
