@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="./styles.css" type="text/css" rel="stylesheet">
+  <title>Tiko-korjaamo Yhteystiedot</title>
+</head>
+<!--Sivu alkaa-->
+<body>
+  <!--Header alkaa-->
+  <header>
+    <!--Banneri-->
+    <img class="banner centeredimg" src="./pics/banner.png" alt="placeholder banner">
+    <!--Työpöytänavi alkaa-->
+    <nav class="shadow">
+      <ul>
+        <li>
+          <a href="./index.html">Etusivu</a>
+        </li>
+        <li>
+          <a href="./aukiolo.html">Aukioloajat</a>
+        </li>
+        <li>
+          <a href="./palvelut.html">Palvelut ja Hinnasto</a>
+        </li>
+        <li>
+          <span class="current">Yhteystiedot</span>
+        </li>
+        <li>
+          <a href="./info.html">Sivun speksejä</a>
+        </li>
+      </ul>
+    </nav>
+    <!--Työpöytänavi loppuu-->
+  </header>
+  <!--Header loppuu-->
+ 
+  <!--Mobiilinavi alkaa-->
+  <nav class="mobilenav">
+    <span class="mobilecurrent">Yhteystiedot</span>
+    <div id="mobilelinks">
+      <a href="./index.html">Etusivu</a>
+      <a href="./aukiolo.html">Aukioloajat</a>
+      <a href="./palvelut.html">Palvelut ja hinnasto</a>
+      <a href="./info.html">Sivun speksejä</a>
+    </div>
+    <!--Font-awesomesta tuotu iconi-->
+    <i class="fa fa-navicon" onclick="myFunction()"></i>
+  </nav>
+  <!--Mobiilinavi loppuu-->
+
+  <!--Sisältöcontaineri alkaa-->
+  <div id="container">
+    <!-- Mainokset alkaa-->
+    <aside class="ads shadow"> 
+      <img src="./pics/ads_burger.jpg" alt="burgers">
+      <img src="./pics/ads_mekot.jpg" alt="mekot">
+      <img src="./pics/ads_rape.jpg" alt="pitsat">
+    </aside> 
+    <!--Mainokset loppuu-->
+  
+  <!--Pääsisältö alkaa-->
+  <main class="shadow card content">
+    <h1>Tiko-Korjaamon yhteystiedot</h1>
+    <p>Soita ja varaa aika! Voit myös laittaa sähköpostia tai ottaa yhteyttä sosiaalisen median sivuillamme.
+      Vastaamme arkisin kello 7:00 - 20:00.
+    </p>
+    <h2 class="toimipiste">Jyväskylän toimipiste</h2>
+    <p>Korjaamokatu 1, 40100 Jyväskylä <br>Puhelin: 04 444 555 <br> Email: <a href="mailto:tikojkl.korjaamo@tiko.fi">tikojkl.korjaamo@tiko.fi</a></p>
+    <h2 class="toimipiste">Äänekosken toimipiste</h2>
+    <p>Pajakuja 2, 44100 Äänekoski  <br> Puhelin: 04 555 444 <br> Email: <a href="mailto:tikoaki.korjaamo@tiko.fi">tikoaki.korjaamo@tiko.fi</a></p>
+    <h2 class="toimipiste">Sosiaaliset mediat</h2>
+    <p>Facebook: <a href="#">Tiko-Korjaamon Facebook-sivut</a> <br> Twitter: <a href="#">@tiko-korjaamo</a> <br> 
+    Instagram: <a href="#">@tikokorjaajat</a></p>
+  </main> 
+  <!--Pääsisältö loppuu-->
+
+  <!--Mobiilimainos 1 alkaa-->
+  <div class="ads" id="mobileads1">
+    <img class="centeredimg" src="./pics/ads_rape.jpg" alt="pizza">
+  </div>
+  <!--Mobiilimainos 1 loppuu-->
+
+  <!--Sivukortit alkaa-->
+  <aside id="sidecards">
+    <!--Tietokortti alkaa-->
+    <div class="infocard shadow card">
+      <h2>Tommi Tuikka</h2>
+      <img class="tommi centeredimg" src="./pics/tommi2.JPG" alt="Tommi.jpg">
+      <p>N5008<br> HTKS20S1<br>N5008@student.jamk.fi</p>
+    </div>
+    <!--Tietokortti loppuu-->
+
+    <!--Uutiskortti alkaa-->
+    <div class="newscard shadow card"> 
+      <h2 class="item1">Uutiset</h2>
+      <a href="#" class="shadow item2">Joulu-alet alkavat! Jopa -45%</a>
+      <a href="#" class="shadow item3">Nyt paremmat uudistetut verkkosivut.</a>
+      <a href="#" class="shadow item4">Ilmastointihuollot alkaen 39&euro;</a>
+      <a href="#" class="shadow item5">Uusi toimipiste avattu Jyväskylään.</a>
+    </div>
+    <!--Uutiskortti loppuu-->
+  </aside>
+  <!--Sivukortit loppuu-->
+
+  <!--Mobiilimainos 2 alkaa-->
+  <div class="ads" id="mobileads2">
+    <img class="centeredimg" src="./pics/ads_mekot.jpg" alt="Mekkoja">
+  </div>
+  <!--Mobiilimainos 2 loppuu-->
+</div>
+<!--Sisältöcontaineri loppuu-->
+
+<!--Footer alkaa-->
+<footer>
+  &copy;Tommi Tuikka 2021 WebUI
+</footer>
+<!--Footer loppuu-->
+
+<!--Mobiili JS alkaa-->
+<script>
+  function myFunction() {
+  var x = document.getElementById("mobilelinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+<!--Mobiili JS loppuu-->
+
+</body>
+<!--Sivu loppuu-->
+</html>

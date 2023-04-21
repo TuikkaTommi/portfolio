@@ -1,0 +1,749 @@
+/** * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/) * http://cssreset.com */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+} /* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Omat CSS tyylit alkaa */
+
+/*Sivulle asetettu taustaväri*/
+body {
+  background-color: rgb(44, 47, 51);
+}
+
+.banner {
+  max-width: 100%;
+}
+
+/*Työpöytänavigaation CSS määritykset*/
+
+nav {
+  width: 100%;
+  background-color: rgb(164, 139, 113);
+  text-align: center;
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
+}
+
+nav a {
+  color: rgb(44, 47, 51);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: rgb(104, 110, 117);
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: rgb(44, 47, 51);
+  text-decoration: none;
+  margin-right: 4em;
+  margin-left: 4em;
+}
+
+/*Nykyinen sivu merkitty naviin erilaisella taustavärillä span-elementtiä käyttäen*/
+
+nav span.current {
+  background-color: rgb(205, 173, 119);
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-right: 1em;
+  padding-left: 1em;
+  border: 1px solid rgb(205, 173, 119);
+  border-radius: 50%;
+}
+
+/*Mainospalkkien määritykset*/
+
+.ads {
+  margin: 1.5em 0;
+  padding: 1em;
+  background-color: rgb(104, 110, 117);
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1em;
+}
+
+/*Kapealle näytölle tarkoitetut mainosalueet piilotettu*/
+
+#mobileads1,
+#mobileads2 {
+  display: none;
+}
+
+/*Sivukorttien määritykset*/
+
+/*Absoluuttisella sijainnilla kortit siirretty oikeaan reunaan*/
+
+#sidecards {
+  width: 20%;
+  position: absolute;
+  right: 4%;
+  top: 20.5em;
+  max-height: 100%;
+  display: block;
+}
+
+.infocard {
+  padding: 2% 1%;
+  max-width: 100%;
+  height: 300px;
+  position: relative;
+  right: 4%;
+  top: 20%;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.infocard p {
+  margin: 2em auto 0;
+}
+
+.infocard img.tommi {
+  max-width: 106px;
+  max-height: 149px;
+}
+
+aside h2 {
+  font-size: 1.4em;
+  margin: 1em;
+  font-weight: bold;
+}
+
+/*Uutiskortti flexillä, jotta uutiset saatu nättiin listaan*/
+
+.newscard {
+  padding: 2% 1%;
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+  right: 4%;
+  top: 30%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/*Uutisille tehty omat pienet kortit*/
+
+.newscard a {
+  margin: 0.7em auto;
+  background-color: rgb(75, 79, 85);
+  padding: 0.5em;
+  border: 1px solid rgb(75, 79, 85);
+  border-radius: 10px;
+  font-size: 1.1em;
+  max-width: 70%;
+  color: black;
+  text-decoration: none;
+}
+
+/*Alimmalle uutiselle annettu lisätilaa alapuolelle*/
+
+.newscard a:last-child {
+  margin-bottom: 1em;
+}
+
+.newscard a:hover {
+  font-weight: bold;
+}
+
+/*Sisällön containeri määritetty, pitää footerin sivun alareunassa*/
+
+#container {
+  min-height: 100vh;
+  margin-bottom: 15em;
+  display: block;
+}
+
+/*Pääsisältö-alueen koko ja paikka asetettu*/
+
+main {
+  max-width: 60%;
+  max-height: 100%;
+  position: relative;
+  left: 5em;
+  padding: 2em;
+  margin: 4em 0;
+}
+
+/*Card-luokka tehty*/
+
+.card {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background-color: rgb(104, 110, 117);
+}
+
+/*Etusivun pääsisällölle tehty kaksi kolumnia*/
+
+.griddedcontent {
+  display: grid;
+  grid-template-columns: 60% auto;
+}
+
+/*Etusivun pääsisällön otsikko levitetty molemmille kolumneille*/
+
+.gridh1 {
+  grid-column: span 2;
+  width: 100%;
+}
+
+/*Molemmille kolumneille määritetty leveys*/
+
+.left,
+.right {
+  max-width: 90%;
+}
+
+/*Notice-luokka huomautuksia yms varten*/
+
+.notice {
+  font-size: 1.2em;
+  margin: 1.5em 0;
+  font-weight: bold;
+  color: rgb(205, 173, 119);
+}
+
+/*Luokka tervetulotoivotukselle*/
+
+.terve {
+  font-size: 1.1em;
+  margin: 1em 0;
+  font-weight: bold;
+}
+
+/*Luokka tehty, jolla voi keskittää kuvan vaakasuunnassa*/
+
+.centeredimg {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/*Tekstin keskellä oleville kuville annettu omat määritykset*/
+
+.paragraphimg {
+  max-width: 300px;
+  margin: 2em auto 1em;
+  height: auto;
+}
+
+/*Kuville tehty kuvatekstiluokka*/
+
+.caption {
+  font-size: 0.7em;
+  margin: 0 auto 2em;
+  max-width: 250px;
+  text-align: center;
+}
+
+/*Listoille omat muotoilut*/
+
+ul.lista {
+  list-style-type: square;
+}
+
+ul.lista > li {
+  margin: 1em;
+  font-weight: bold;
+}
+
+/*Tekstikappaleille pieni alamargini*/
+
+p {
+  margin-bottom: 1em;
+}
+
+/*Otsikkojen muotoilut*/
+
+h1 {
+  font-size: 1.6em;
+  margin: 0 auto 1em;
+  padding-bottom: 0.5em;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 2px solid rgb(164, 139, 113);
+}
+
+h2 {
+  font-size: 1.2em;
+  margin: 1em 0;
+  font-weight: bold;
+}
+
+/*Toimipiste-otsikot keskitetty vasemmalle*/
+
+.toimipiste {
+  text-align: left;
+}
+
+/*Tekstissä oleville linkeille omat muotoilut*/
+
+.content a {
+  font-weight: 600;
+  color: black;
+}
+
+.content a:hover {
+  font-size: 1.1em;
+}
+
+/*Taulukoiden muotoilut*/
+
+table,
+th,
+td {
+  border: 1px solid black;
+  padding: 0.5em;
+  background-color: rgb(75, 79, 85);
+  font-weight: bold;
+  margin: 1.5em 1em;
+}
+
+/*Speksi-sivun layout-kuville annettu omat määritykset*/
+
+.layout {
+  max-width: 90%;
+  height: auto;
+  display: block;
+  padding: 2em 0;
+}
+
+/*Luokka tehty varjojen asettamiselle*/
+
+.shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*Footerin muotoilut*/
+
+footer {
+  width: 100%;
+  text-align: center;
+  background-color: rgb(164, 139, 113);
+  padding: 1em 0;
+  position: relative;
+  bottom: 0;
+  color: rgb(20, 23, 27);
+}
+
+/* mobiilinavin CSS muotoilut. näkyy vasta tarpeeksi kapealla ruudulla */
+
+.mobilenav {
+  display: none;
+  background-color: rgb(164, 139, 113);
+  min-height: 55px;
+  padding: 0;
+}
+
+#mobilelinks {
+  display: none;
+}
+
+/*Mobiilinavin linkit asetettu päällekkäin nätisti*/
+
+.mobilenav a {
+  padding: 1em 1em 0;
+  color: rgb(205, 173, 119);
+  font-weight: bold;
+  display: block;
+  position: relative;
+  background-color: rgb(44, 47, 51);
+  height: 39px;
+}
+
+.mobilenav a:hover {
+  background-color: rgb(104, 110, 117);
+  color: rgb(205, 173, 119);
+}
+
+/* Hampurilaismenun ikoni tuotu font-awesomesta*/
+
+.fa-navicon {
+  font-size: 50px;
+  padding: 2.5px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-navicon:hover {
+  background-color: rgb(205, 173, 119);
+}
+
+/*Mobiilinäkymässä nykyinen sivu näkyy navipalkissa*/
+
+.mobilecurrent {
+  background-color: rgb(205, 173, 119);
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: bold;
+  height: 39px;
+  padding: 1em 1em 0;
+}
+
+/* Media queryt tänne! */
+
+@media (max-width: 1375px) {
+  /* Navigaation linkkien välit sovitettu kapeampaan näyttöön */
+  nav li {
+    margin-right: 2em;
+    margin-left: 2em;
+  }
+}
+
+@media (max-width: 1200px) {
+  /* Pääsisällön ja sivukorttien leveys ja sijainti muokattu sopivammaksi */
+
+  main {
+    max-width: 65%;
+    left: 2%;
+  }
+
+  #sidecards {
+    right: 2%;
+    width: 22%;
+  }
+}
+
+@media (max-width: 1050px) {
+  /* Etusivun pääsisällön kahden kolumnin layoutti vaihdettu yhteen kolumniin */
+
+  .griddedcontent {
+    display: block;
+    position: relative;
+  }
+
+  .left {
+    max-width: 100%;
+  }
+
+  .right {
+    max-width: 100%;
+  }
+
+  #sidecards {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 997px) {
+  nav li {
+    margin: 0 1em;
+  }
+
+  /* Sivukortit siirretty pääsisällön alapuolelle vierekkäin flexinä */
+
+  #sidecards {
+    position: relative;
+    display: flex;
+    width: 90%;
+    right: 0;
+    top: 2em;
+  }
+
+  #sidecards {
+    margin: 0 auto;
+  }
+
+  .infocard,
+  .newscard {
+    margin: 0 auto;
+  }
+
+  .infocard {
+    min-width: 35%;
+    left: initial;
+  }
+
+  table {
+    margin: auto;
+  }
+
+  /* Uutiskortti muutettu gridiksi, jotta sopii paremmin leveälle alueelle */
+
+  .newscard {
+    display: grid;
+    grid-template-rows: 1fr 2fr 2fr;
+    grid-template-columns: 1fr 1fr;
+    max-width: 50%;
+    right: initial;
+  }
+
+  .item1 {
+    grid-column: span 2;
+  }
+
+  .newscard a {
+    padding: 1em 0.5em 1em;
+    font-size: 1.2em;
+  }
+
+  #container {
+    margin-bottom: 5em;
+  }
+
+  /* Pääsisältö muokattu koko sivun levyiseksi */
+
+  .content {
+    max-width: 100%;
+    left: 0;
+    margin: 4em auto 2em;
+    border-radius: 0;
+  }
+
+  /* Otsikoiden ulkonäköä muokattu tabletti/mobiilinäkymään */
+
+  h1 {
+    background-color: rgb(164, 139, 113);
+    max-width: 100%;
+    padding: 1em 0;
+    border: 1px solid transparent;
+    border-radius: 5%;
+  }
+
+  h2 {
+    text-align: center;
+    border-bottom: 2px solid rgb(164, 139, 113);
+    padding-bottom: 0.2em;
+  }
+}
+
+@media (max-width: 815px) {
+  /* Uutiskortti takaisin pystympään muotoon*/
+
+  .newscard {
+    display: flex;
+  }
+}
+
+@media (max-width: 805px) {
+  /* Työpöytänavi ja banneri piilotettu ja mobiilinavi tulee näkyviin*/
+
+  nav {
+    display: none;
+  }
+
+  header {
+    display: none;
+  }
+
+  .mobilenav {
+    display: block;
+  }
+}
+
+@media (max-width: 770px) {
+  .content {
+    margin-top: 2em;
+  }
+
+  /* Ylämainoksista yksi mainos siirretty pääsisällön jälkeen*/
+
+  .ads img:last-child {
+    display: none;
+  }
+
+  #mobileads1 {
+    display: block;
+  }
+
+  #mobileads1 img {
+    display: block;
+  }
+}
+
+@media (max-width: 520px) {
+  /* Nyt vain yksi mainos per alue. Sivukorttien jälkeen uusi mainosalue*/
+
+  .ads img:nth-child(2) {
+    display: none;
+  }
+
+  #mobileads2 {
+    display: block;
+    margin-top: 5em;
+  }
+
+  #mobileads2 img {
+    display: block;
+  }
+
+  /* Alaotsikoita muokattu mobiilinäkymään*/
+
+  h2 {
+    text-align: center;
+    border-bottom: 2px solid rgb(164, 139, 113);
+    padding-bottom: 0.2em;
+  }
+}
+
+@media (max-width: 500px) {
+  /*Sivukortit siirretty allekkain*/
+
+  #sidecards {
+    display: block;
+  }
+
+  .infocard,
+  .newscard {
+    max-width: 80%;
+    margin: 0 auto 2em;
+    left: initial;
+    right: initial;
+  }
+
+  /*Hintataulukko pienennetty*/
+
+  .palvelut {
+    margin: 1em auto;
+    max-width: 70%;
+  }
+
+  .palvelut td {
+    padding: 0.3em;
+  }
+}
+
+@media (max-width: 400px) {
+  /*Sivukortteja muokattu sopivamman kokoiseksi*/
+
+  .infocard,
+  .newscard {
+    max-width: 95%;
+    margin: 0 auto 2em;
+    left: initial;
+    right: initial;
+  }
+}

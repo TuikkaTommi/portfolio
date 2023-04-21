@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="./styles.css" type="text/css" rel="stylesheet">
+  <title>Tiko-korjaamo Info</title>
+</head>
+<!--Sivu alkaa-->
+<body>
+  <!--Header alkaa-->
+  <header>
+    <!--Banneri-->
+    <img class="banner centeredimg" src="./pics/banner.png" alt="placeholder banner">
+    <!--Työpöytänavi alkaa-->
+    <nav class="shadow">
+      <ul>
+        <li>
+          <a href="./index.html">Etusivu</a>
+        </li>
+        <li>
+          <a href="./aukiolo.html">Aukioloajat</a>
+        </li>
+        <li>
+          <a href="./palvelut.html">Palvelut ja Hinnasto</a>
+        </li>
+        <li>
+          <a href="./yhteystiedot.html">Yhteystiedot</a>
+        </li>
+        <li>
+          <span class="current">Sivun speksejä</span>
+        </li>
+      </ul>
+    </nav>
+    <!--Työpöytänavi loppuu-->
+  </header>
+  <!--Header loppuu-->
+
+  <!--Mobiilinavi alkaa-->
+  <nav class="mobilenav">
+    <span class="mobilecurrent">Sivun speksejä</span>
+    <div id="mobilelinks">
+      <a href="./index.html">Etusivu</a>
+      <a href="./aukiolo.html">Aukioloajat</a>
+      <a href="./palvelut.html">Palvelut ja hinnasto</a>
+      <a href="./yhteystiedot.html">Yhteystiedot</a>
+    </div>
+    <!--Font-awesomesta tuotu iconi-->
+    <i class="fa fa-navicon" onclick="myFunction()"></i>
+  </nav>
+  <!--Mobiilinavi loppuu-->
+
+  <!--Sisältöcontainer alkaa-->
+  <div id="container">
+    <!-- Mainokset alkaa-->
+    <aside class="ads shadow"> 
+      <img src="./pics/ads_burger.jpg" alt="burgers">
+      <img src="./pics/ads_mekot.jpg" alt="mekot">
+      <img src="./pics/ads_rape.jpg" alt="pitsat">
+    </aside> 
+    <!--Mainokset loppuu-->
+  
+  <!--Pääsisältö alkaa-->
+  <main class="shadow card content">
+    <h1>Verkkosivun speksejä</h1>
+    <h2>Testatut selaimet</h2>
+    <!--Selainlista alkaa-->
+    <ul class="lista">
+      <li>Mozilla Firefox v. 84.0.2 64-Bit</li>
+      <li>Chrome v. 87.0.4280.141 64-Bit</li>
+    </ul>
+    <!--Selainlista loppuu-->
+
+    <!--Kansiorakenne alkaa-->
+    <h2>Sivuston kansiorakenne</h2>
+    <p>Sivusto on yhdessä kansiossa ja kuville on oma alikansionsa.</p>
+    <img class="layout centeredimg" src="./pics/kansiorakenne.png" alt="kansiorakenne">
+    <!--Kansiorakenne loppuu-->
+
+    <!--Layoutti alkaa-->
+    <h2>Sivuston layoutti</h2>
+    <p>Työpöytä-kokoisella ruudulla käytetään multicolumn-layouttia.</p>
+    <img class="layout centeredimg" src="./pics/1080layout.png" alt="1080layoutti">
+    <p>Tabletti-layoutissa käytetään muokattua singlecolumn-layouttia. Pääsisältö 
+      on yksi kolumni ja sivukortit ovat kahdessa kolumnissa pääsisällön alla. Navigaatio on myös vaihtunut hampurilaisnavigaatioksi. 
+      Lisäksi yläpalkkiin mahtumattomia mainoksia on siirretty pääsisällön jälkeen.
+    </p>
+    <img class="layout centeredimg" src="./pics/tabletlayout.png" alt="Tablettilayout">
+    <p>Mobiililayoutissa siirrytään kokonaan singlecolumn-layouttiin, asiden kortitkin on nyt siirretty yhteen columniin.. Lisäksi viimeiset yläpalkkiin mahtumattomat
+      mainokset on siirretty asiden ja footerin väliin. Layoutin toimivuus on testattu 375px leveyteen asti.
+    </p>
+    <img class="layout centeredimg" src="./pics/mobilelayout.png" alt="MobiiliLayout">
+    <!--Layoutti loppuu-->
+
+    <!--Ulkoiset alkaa-->
+    <h2>Linkit ulkoisiin juttuihin</h2>
+    <!--Ulkoisten lista alkaa-->
+    <ul class="lista">
+      <li>
+       Käytin hampurilaismenun ikonin tekemiseen <a href="https://fontawesome.com/">Font Awesomen kirjastoa.</a>
+      </li>
+      <li>
+       Käytin myös <a target="blank" href="https://dev.to/emmaadesile/how-to-create-a-hamburger-menu-icon-with-css-and-javascript-1kgd">Adesile Emmanuelin ohjetta</a>
+        hampurilaismenun ikonin luomiseen.
+      </li>
+      <li>
+        Lisäksi käytin <a href="http://meyerweb.com/eric/tools/css/reset/">Eric Meyer's Reset CSS v2.0</a> CSS resettiä.
+      </li>
+    </ul>
+    <!--Ulkoisten lista loppuu-->
+    <!--Ulkoiset loppuu-->
+    
+  </main> 
+  <!--Pääsisältö loppuu-->
+
+  <!--Mobiilimainos 1 alkaa-->
+  <div class="ads" id="mobileads1">
+    <img class="centeredimg" src="./pics/ads_rape.jpg" alt="pizza">
+  </div>
+  <!--Mobiilimainos 1 loppuu-->
+
+  <!--Sivukortit alkaa-->
+  <aside id="sidecards">
+    <!--Tietokortti alkaa-->
+    <div class="infocard shadow card">
+      <h2>Tommi Tuikka</h2>
+      <img class="tommi centeredimg" src="./pics/tommi2.JPG" alt="Tommi.jpg">
+      <p>N5008<br> HTKS20S1<br>N5008@student.jamk.fi</p>
+    </div>
+    <!--Tietokortti loppuu-->
+
+    <!--Uutiskortti alkaa-->
+    <div class="newscard shadow card"> 
+      <h2 class="item1">Uutiset</h2>
+      <a href="#" class="shadow item2">Joulu-alet alkavat! Jopa -45%</a>
+      <a href="#" class="shadow item3">Nyt paremmat uudistetut verkkosivut.</a>
+      <a href="#" class="shadow item4">Ilmastointihuollot alkaen 39&euro;</a>
+      <a href="#" class="shadow item5">Uusi toimipiste avattu Jyväskylään.</a>
+    </div> 
+    <!--Uutiskortti loppuu-->
+  </aside>
+  <!--Sivukortit loppuu-->
+
+  <!--Mobiilimainos 2 alkaa-->
+  <div class="ads" id="mobileads2">
+    <img class="centeredimg" src="./pics/ads_mekot.jpg" alt="Mekkoja">
+  </div>
+  <!--mobiilimainos 2 loppuu-->
+</div>
+<!--Containeri loppuu-->
+
+<!--Footer alkaa-->
+<footer>
+  &copy;Tommi Tuikka 2021 WebUI
+</footer>
+<!--Footer loppuu-->
+
+<!--Mobiili JS alkaa-->
+<script>
+  function myFunction() {
+  var x = document.getElementById("mobilelinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+<!--Mobiili JS loppuu-->
+
+</body>
+<!--Sivu loppuu-->
+</html>
