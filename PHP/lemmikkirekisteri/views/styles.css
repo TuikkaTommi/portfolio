@@ -1,0 +1,32 @@
+body {
+  padding: 1em;
+}
+
+.listcontainer {
+  border: 1px solid black;
+  max-width: 75%;
+  display: flex;
+  padding: 1em;
+  margin-bottom: 0.75em;
+}
+
+.petform {
+  border: 1px solid black;
+  padding: 1em;
+  max-width: max-content;
+}
+
+.addbutton {
+  margin-bottom: 1em;
+}
+
+.buttoncontainer {
+  margin-right: 0em;
+  margin-left: auto;
+  display: flex;
+  gap: 0.5em;
+}
+
+.buttoncontainer>form {
+  margin: 0;
+}

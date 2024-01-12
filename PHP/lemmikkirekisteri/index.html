@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lemmikkirekisteri - Kirjautuminen</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <h2>Kirjaudu sisään</h2>
+    <p>
+      Tähän sovellukseen pääsee kirjautumaan tunnuksilla "admin" ja "user".
+      Käyttäjien salasanat ovat samat kuin käyttäjänimi. Tavallisia käyttäjiä
+      voidaan myös luoda rekisteröitymällä. Admin-käyttäjällä voi lisätä,
+      muokata ja poistaa lemmikkejä, user-käyttäjä voi vain katsoa niitä.
+    </p>
+    <form action="user_functions/create_session.php" method="post">
+      <!--Kirjautumislomake lähetetään create_session.php-tiedostoon -->
+      <label>
+        Käyttäjänimi:
+        <input
+          type="text"
+          name="username"
+          placeholder="Syötä käyttäjätunnus"
+          required="true"
+        />
+      </label>
+      <label>
+        Salasana:
+        <input
+          type="password"
+          name="password"
+          placeholder="Syötä salasana"
+          required="true"
+        />
+      </label>
+      <input type="submit" value="Kirjaudu" />
+    </form>
+
+    <p>
+      Eikö sinulla vielä ole tunnuksia?
+      <a href="views/register_form.php">Rekisteröidy tästä</a>
+    </p>
+  </body>
+</html>
