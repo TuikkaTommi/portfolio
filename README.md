@@ -1,6 +1,6 @@
 # Portfolio - WIP 🖥️
 
-[About me](#about-me-)
+[About me](#about-me-%EF%B8%8F)
 [Skills](#skills-)
 [Projects](#projects-)
 [Contact info](#my-contact-info-)
