@@ -18,6 +18,7 @@ I'm currently studying web-development at [JAMK University of Applied Sciences](
   - React
   - HTML
   - CSS
+  - Figma
 - Backend-development
   - Node.js
   - Express
@@ -41,7 +42,11 @@ This is an Angular-version of the disc golf app. The basic features are the same
 
 ### [Express.js backend-server for saving disc golf scores](https://github.com/TuikkaTommi/portfolio/tree/main/Express/playerscorebackend)
 
-Backend created for manipulating a MongoDB database that stores disc golf scores. User can add, view and update scores.  
+Backend created for manipulating a MongoDB database that stores disc golf scores. User can add, view and update scores.
+
+### [PHP pet-registry app](https://github.com/TuikkaTommi/portfolio/tree/main/PHP/lemmikkirekisteri)
+
+App that holds a registry of pets, made with PHP. Data is stored in a MySQL database. Admins can add, modify and delete pets in the reqistry, while regular users can only view them. The app has a session based authentication-system. 
 
 ## My contact info 📱
 
