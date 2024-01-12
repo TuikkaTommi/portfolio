@@ -54,6 +54,8 @@ Backend created for manipulating a MongoDB database that stores disc golf scores
 
 App that holds a registry of pets, made with PHP. Data is stored in a MySQL database. Admins can add, modify and delete pets in the reqistry, while regular users can only view them. The app has a session based authentication-system. 
 
+### MORE COMING SOON...
+
 ## My contact info 📱
 
 Tommi Tuikka <br>
