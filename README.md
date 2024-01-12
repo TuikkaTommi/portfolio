@@ -11,6 +11,7 @@ I'm currently studying web-development at [JAMK University of Applied Sciences](
 
 ## About me ⛷️
 
+Something interesting here...
 
 ## Skills 💻
 
