@@ -1,9 +1,9 @@
 # Portfolio - WIP 🖥️
 
-[About me](#about-me)
-[Skills](#skills)
-[Projects](#projects)
-[Contact info](#my-contact-info)
+[About me](#about-me-)
+[Skills](#skills-)
+[Projects](#projects-)
+[Contact info](#my-contact-info-)
 
 This is a (WIP) portfolio-repository for my web-development related projects. Different technologies have their own directories with the projects inside them.
 
