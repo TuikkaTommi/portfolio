@@ -12,7 +12,7 @@ Inside the service the fetching of scores is implemented with the following meth
   }
 ```
 
-It makes a http GET-request to the url and returns the result as an Observable.
+It makes a http GET-request to the url and returns the result as an Observable. Methods for adding and deleting scores work with a similar principle.
 
 Then a component can fetch all scores by using the previous method for example in the following way:
 
