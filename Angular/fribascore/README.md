@@ -43,13 +43,28 @@ export interface Score {
 
 ## Users and login
 
-User management in this app is also implemented with [another service](https://github.com/TuikkaTommi/portfolio/blob/main/Angular/fribascore/src/app/login.service.ts). The service holds the information about currently logged in user, and provides the methods for logging in and out of the app. The feature is only a very basic frontend-implementation and is mostly meant for conditional rendering of delete buttons and such. The user logs in to the application by using [this form-component](https://github.com/TuikkaTommi/portfolio/tree/main/Angular/fribascore/src/app/login). The component uses the methods from login-service.
+User management in this app is also implemented with [another service](https://github.com/TuikkaTommi/portfolio/blob/main/Angular/fribascore/src/app/login.service.ts). The service holds the information about currently logged in user, and provides the methods for logging in and out of the app. The feature is only a very basic frontend-implementation and is mostly meant for conditional rendering of delete buttons and such. The user logs in to the application by using [this form-component](https://github.com/TuikkaTommi/portfolio/tree/main/Angular/fribascore/src/app/login). The component uses this login-method from login-service:
+
+```
+login(username: string) {
+    this.logged = true;
+    this.loggedUser = username;
+  }
+```
+
+It simply sets the status of logged to 'true', and sets the username to a variable.
 
 An example of conditional rendering based on the login-status is the delete-button in [this score-list component](https://github.com/TuikkaTommi/portfolio/tree/main/Angular/fribascore/src/app/score-list). The component fetches the login-status from the login-service and based on that either hides or shows the button. It also checks that the logged user is the same user that created the score:
 
 ```
  <button *ngIf="logged && score.player === loggedUser" type="button" class="delete" title="delete score" (click)="delete(score)">x</button>
 ```
+
+
+
+
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
 
