@@ -1,4 +1,55 @@
-# Fribascore
+# Fribascore - Angular
+
+This project was made for the frontend-development course. The application allows the user to manage their disc golf scores. A logged in user can see all the scores and add and delete their own scores. Data is saved in a mock-database, that can be accessed with http-requests. 
+
+Fetching, adding and deleting scores are implemented with [a service](https://github.com/TuikkaTommi/portfolio/blob/main/Angular/fribascore/src/app/score.service.ts) that provides methods for creating the necessary http-requests.
+
+Inside the service the fetching of scores is implemented with the following method:
+
+```
+  getScores(): Observable<Score[]> {
+    return this.http.get<Score[]>(this.scoresUrl);
+  }
+```
+
+It makes a http GET-request to the url and returns the result as an Observable.
+
+Then a component can fetch all scores by using the previous method for example in the following way:
+
+```
+// Import service to the component
+import { ScoreService } from '../score.service';
+
+// Scores have an interface that dictates their structure, so their type is Score[]
+scores: Score[] = [];
+
+// Method that gets data from service and sets it to a variable inside the component
+getScores(): void {
+    this.scoreService.getScores().subscribe(scores => this.scores = scores);
+  }
+```
+
+To enforce the structure of scores, [an interface](https://github.com/TuikkaTommi/portfolio/blob/main/Angular/fribascore/src/app/score.ts) is implemented:
+
+```
+export interface Score {
+  id: number;
+  coursename: string;
+  score: string;
+  player: string;
+  date: string;
+}
+```
+
+## Users and login
+
+User management in this app is also implemented with [another service](https://github.com/TuikkaTommi/portfolio/blob/main/Angular/fribascore/src/app/login.service.ts). The service holds the information about currently logged in user, and provides the methods for logging in and out of the app. The feature is only a very basic frontend-implementation and is mostly meant for conditional rendering of delete buttons and such. The user logs in to the application by using [this form-component](https://github.com/TuikkaTommi/portfolio/tree/main/Angular/fribascore/src/app/login). The component uses the methods from login-service.
+
+An example of conditional rendering based on the login-status is the delete-button in [this score-list component](https://github.com/TuikkaTommi/portfolio/tree/main/Angular/fribascore/src/app/score-list). The component fetches the login-status from the login-service and based on that either hides or shows the button. It also checks that the logged user is the same user that created the score:
+
+```
+ <button *ngIf="logged && score.player === loggedUser" type="button" class="delete" title="delete score" (click)="delete(score)">x</button>
+```
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
 
