@@ -14,7 +14,17 @@ The saved session-details are then used to determine the login-status across the
 
 ## Adding/updating a pet
 
-Adding a new pet to the registry is done using the [views/pet_form.php](https://github.com/TuikkaTommi/portfolio/blob/main/PHP/lemmikkirekisteri/views/pet_form.php) form. Only admins are able to access this form. The form posts the entered data to [pet_functions/addpet.php] file, that sanitizes the inputs with strip_tags()-method and checks if all required data was received. If all is successful, addpet()-function from [db_functions.php](https://github.com/TuikkaTommi/portfolio/blob/main/PHP/lemmikkirekisteri/db_functions.php) is used to insert the pet into the db.
+Adding a new pet to the registry is done using the [views/pet_form.php](https://github.com/TuikkaTommi/portfolio/blob/main/PHP/lemmikkirekisteri/views/pet_form.php) form. Only admins are able to access this form. The form posts the entered data to [pet_functions/addpet.php] file, that sanitizes the inputs with strip_tags()-method and checks if all required data was received. If all is successful, the following addpet()-function from [db_functions.php](https://github.com/TuikkaTommi/portfolio/blob/main/PHP/lemmikkirekisteri/db_functions.php) is used to insert the pet into the db:
+
+
+```
+function addPet($name, $species, $dateOfBirth, $allergies, $medication, $ownerName, $ownerPhone, $conn)
+{
+  $sql = "INSERT INTO pets (name, species, date_of_birth, allergies, medication, owner_name, owner_phone) VALUES ('$name', '$species', '$dateOfBirth', '$allergies', '$medication', '$ownerName', '$ownerPhone');";
+
+  mysqli_query($conn, $sql) or die('Lemmikin lisäys epäonnistui' . mysqli_error($conn));
+}
+```
 
 Updating an existing pet is done through the same form, but the existing pet is fetched from the db by its id and the fields are pre-filled. When updating, the data is posted to the [pet_functions/editpet.php](https://github.com/TuikkaTommi/portfolio/blob/main/PHP/lemmikkirekisteri/pet_functions/editpet.php) file, that updates a pet in the db with the editPet()-function.
 
