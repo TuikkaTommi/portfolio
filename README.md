@@ -33,6 +33,7 @@ I'm on the last stretch of my studies, and I have gathered a wide set of skills 
   - MongoDB
 - Cloud-services
   - AWS
+  - Serverless framework
 - Others
   - Basics of TensorFlow.js
 
