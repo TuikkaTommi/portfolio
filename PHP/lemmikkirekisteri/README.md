@@ -20,4 +20,10 @@ Updating an existing pet is done through the same form, but the existing pet is 
 
 ## List of pets in the registry
 
-JATKA TÄHÄN...
+Listing of the pets currently in the database is handled by the [views/list.php](https://github.com/TuikkaTommi/portfolio/blob/main/PHP/lemmikkirekisteri/views/list.php) file. The list is only available for a logged in user, and all modifying actions are only available for admins. The file fetches all pets from the db, and then displays each of them inside their own <div>-element by implementing foreach. The list can be filtered to show only specific species. The filtering is done with a radio-button, that sends its selection back to the same file, reloadinig it. That species-data then filters an array that holds all the pets:
+
+```
+$data = array_filter($data, function ($pet) use ($filter) {
+        return ($pet['species'] == $filter);
+      });
+```
