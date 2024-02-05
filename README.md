@@ -60,6 +60,6 @@ App that holds a registry of pets, made with PHP. Data is stored in a MySQL data
 ## My contact info 📱
 
 Tommi Tuikka <br>
-Email: *coming soon* <br>
+Email: tommi.tuikka@outlook.com <br>
 Student email: N5008@student.jamk.fi <br>
 LinkedIn: https://www.linkedin.com/in/tuikkatommi/
