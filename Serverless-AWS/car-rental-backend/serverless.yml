@@ -1,0 +1,153 @@
+# Cognito-autentikaatio emaililla ja passwordilla
+
+service: lopputyo # Palvelun nimi
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: eu-north-1 # AWS:n region eli alue
+  environment: # ympäristömuuttujat
+    user_pool_id: { Ref: UserPool } # cogniton user pool
+    client_id: { Ref: UserClient } # cogniton client id
+    ddb_table: CustomerTable # Ddb:n taulun nimi
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action: # lambda-funktioille oikeudet käyttää cognitoa
+            - cognito-idp:AdminInitiateAuth
+            - cognito-idp:AdminCreateUser
+            - cognito-idp:AdminSetUserPassword
+            - dynamodb:* # Kaikkiin dynamoDB-operaatioihin oikeudet
+          Resource: '*'
+  httpApi:
+    cors: true
+    authorizers:
+      PrivateAuthorizer: # Cogniton authorizerin nimi
+        type: jwt
+        identitySource: $request.header.Authorization
+        issuerUrl:
+          Fn::Join:
+            - ''
+            - - 'https://cognito-idp.'
+              - '${opt:region, self:provider.region}'
+              - '.amazonaws.com/'
+              - Ref: UserPool
+        audience:
+          - Ref: UserClient
+
+functions:
+  loginUser: # sisäänkirjautuminen
+    handler: user/login.handler
+    events:
+      - httpApi:
+          path: /user/login
+          method: post
+
+  signupUser: # rekisteröityminen eli tunnareiden luonti
+    handler: user/signup.handler
+    events:
+      - httpApi:
+          path: /user/signup
+          method: post
+
+  scanCustomers: # Kaikkien asiakkaiden haku
+    handler: customer/scancustomers.handler
+    events:
+      - httpApi:
+          path: /customer/scan
+          method: get
+
+  getCustomer: # Tietyn asiakkaan haku asiakasnumerolla
+    handler: customer/getcustomer.handler
+    events:
+      - httpApi:
+          path: /customer/get/{ccode} # {ccode} on polussa oleva tunnus, jonka perusteella asiakas haetaan
+          method: get
+
+  addCustomer: # Asiakkaan lisäys kantaan. Suojattu funktio ja reitti.
+    handler: customer/addcustomer.handler
+    events:
+      - httpApi:
+          path: /customer/add
+          method: post
+          authorizer: PrivateAuthorizer # suojaus
+
+  upsertRental: # Vuokrauksen lisääminen asiakkaalle. Suojattu funktio ja reitti.
+    handler: customer/upsertrental.handler
+    events:
+      - httpApi:
+          path: /customer/upsertrental/{ccode}
+          method: post
+          authorizer: PrivateAuthorizer # suojaus
+
+  deleteCustomer: # Asiakkaan poistaminen kannasta. Suojattu funktio ja reitti.
+    handler: customer/deletecustomer.handler
+    events:
+      - httpApi:
+          path: /customer/deletecustomer/{ccode}
+          method: delete
+          authorizer: PrivateAuthorizer # suojaus
+
+  getRentalsByDate: # Vuokrausten haku päivämäärän perusteella. Suojattu funktio ja reitti.
+    handler: customer/getrentalsbydate.handler
+    events:
+      - httpApi:
+          path: /customer/getrentalsbydate/{date}
+          method: get
+          authorizer: PrivateAuthorizer # suojaus
+
+  getRentalsByLicense: # Vuokrausten haku rekisterinumerolla. Suojattu funktio ja reitti.
+    handler: customer/getrentalsbylicense.handler
+    events:
+      - httpApi:
+          path: /customer/getrentalsbylicense/{licenseNumber}
+          method: get
+          authorizer: PrivateAuthorizer # suojaus
+
+  deleteRental: # Vuokrausten haku rekisterinumerolla. Suojattu funktio ja reitti.
+    handler: customer/deleterental.handler
+    events:
+      - httpApi:
+          path: /customer/deleterental/{ccode}/{rcode}
+          method: post
+          authorizer: PrivateAuthorizer # suojaus
+
+resources: # resurssit eli palvelut oletuspalveluiden lisäksi
+  Resources:
+    UserPool: # cognito userpoolin luonti
+      Type: AWS::Cognito::UserPool
+      Properties:
+        UserPoolName: serverless-auth-pool
+        Schema: # käyttäjän tietojen skeema cognitossa. Tässä pelkkä email
+          - Name: email
+            Required: true
+            Mutable: true
+        Policies:
+          PasswordPolicy: # salasanan ominaisuudet
+            MinimumLength: 6
+        AutoVerifiedAttributes: ['email'] # email validoidaan
+
+    UserClient: # cognito userpoolin client
+      Type: AWS::Cognito::UserPoolClient
+      Properties:
+        ClientName: user-pool-ui
+        GenerateSecret: false
+        UserPoolId: { Ref: UserPool }
+        AccessTokenValidity: 5 # token validi 5 tuntia
+        IdTokenValidity: 5
+        ExplicitAuthFlows:
+          - 'ADMIN_NO_SRP_AUTH' # tavallinen authorisaatio emaililla ja salasanalla
+    CustomerTable: # Tietokannan taulun luonti
+      Type: AWS::DynamoDB::Table
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: customercode # Primary-keyn määritys
+            AttributeType: S # Tietueen tyyppi on String
+        BillingMode: PAY_PER_REQUEST
+        KeySchema:
+          - AttributeName: customercode
+            KeyType: HASH
+            # taulun nimi aws:ssä CustomerTable-dev
+        TableName: CustomerTable
