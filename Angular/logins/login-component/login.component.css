@@ -1,0 +1,110 @@
+
+.bg {
+  background-image: url(src\assets\img\login_bg.png);
+  background-size: 100% 100%;
+  max-width: fit-content;
+  border-radius: 20px;
+  margin: 2% auto;
+  max-width: fit-content;
+  border-radius: 20px;
+  transform: translateZ(0);
+}
+
+.close-button {
+  cursor: pointer;
+  position: fixed;
+  right: 1em;
+  top: 1em;
+  background-color: var(--mediumblue);
+  color: var(--lightblue);
+  padding: 0.53125em 0.53125em 0 0.53125em;
+  border-radius: 6px;
+}
+
+.close-button:hover {
+  transform: scale(1.1);
+}
+
+.close-icon {
+  color: var(--lightblue);
+  height: 35px;
+  width: 35px;
+}
+
+.glassbox {
+  padding: 35px 35px 63px 61px;
+  
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 1024px;
+}
+
+label {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.25em;
+}
+
+input {
+  box-sizing: border-box;
+  padding-left: 0.75em;
+  height: 33px;
+  width: 545px;
+  border-radius: 5px;
+  border: 0;
+  box-shadow: inset 0px 0px 1px 1px rgba(57, 100, 114, 0.5), inset 5px 5px 4px rgba(57, 100, 114, 0.4);
+  background-color: var(--lightblue);
+  color: var(--mediumblue);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: inset 0px 0px 1px 1px rgba(57, 100, 114, 0.5), inset 5px 5px 4px rgba(57, 100, 114, 0.4), inset 0 0 0 30px var(--lightblue) !important;
+  background-color: var(--lightblue);
+  color: var(--lightblue);
+}
+
+h2, label {
+  color: var(--darkblue);
+}
+
+h2 {
+  font-size: 2.5em;
+  margin-top: 0;
+}
+
+.forgotpw:hover, .register:hover {
+  color: var(--mediumblue);
+  cursor: pointer;
+}
+
+.linktext {
+  margin: 0;
+  text-decoration: underline;
+}
+
+.linktext:hover {
+  color: var(--mediumblue);
+  cursor: pointer;
+}
+
+.error {
+  font-size: 0.9em;
+  color: var(--error);
+  margin-top: 0.2em;
+}
+
+
+.btnandtxt {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+  margin: 2em 0 0.5em;
+}

@@ -1,0 +1,86 @@
+<!-- Backdrop styles come from global styles. Backdrop causes the form to be displayed on top of other components -->
+<div class="backdrop" (click)="changeVisibility()">
+	<!-- Div that provides background-image for the form -->
+	<div class="bg" (click)="$event.stopPropagation()">
+		<div class="glassbox">
+			<!-- Button to close the edit-window -->
+			<div class="close-button" (click)="changeVisibility()">
+				<img
+					class="close-icon"
+					src="assets\icons\close.svg"
+					alt="close-button"
+				/>
+			</div>
+
+			<h2>Kirjaudu sisään</h2>
+
+			<!-- Login-form -->
+			<form #f="ngForm" (click)="$event.stopPropagation()">
+				<!-- Input for email -->
+				<label>
+					Sähköposti *
+					<input
+						type="text"
+						required
+						minlength="2"
+						maxlength="45"
+						name="email"
+						[(ngModel)]="email"
+					/>
+				</label>
+
+				<!-- Input for password -->
+				<label>
+					Salasana *
+					<input
+						type="password"
+						required
+						minlength="2"
+						maxlength="45"
+						name="password"
+						[(ngModel)]="password"
+					/>
+				</label>
+			</form>
+
+			<!-- Link to open passwordreset-form -->
+			<p class="linktext" (click)="showPwReset()">Unohdin salasanani</p>
+
+			<!-- Error that is displayed if there is an error during login -->
+			<p *ngIf="loginError" class="error updateErr">
+				Virhe kirjautumisessa. Tarkista sähköpostiosoite ja salasana.
+			</p>
+
+			<div class="btnandtxt">
+				<!-- Button to login -->
+				<button
+					[disabled]="!f.valid"
+					(click)="onSubmit(f.value)"
+					type="submit"
+					class="greenbutton"
+				>
+					Kirjaudu sisään
+				</button>
+				<div>
+					<!-- Link to open registration-form -->
+					<p class="linktext" (click)="showRegisterForm()">
+						Uusi käyttäjä?<br />
+						Rekisteröidy tästä
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Notification popup-component. Receives info about which notification to show,
+	 and which email the confirmation code should be sent to -->
+<app-user-notification
+	*ngIf="isUserNotificationVisible"
+	(register)="showRegisterForm()"
+	(confirm)="showConfirmForm()"
+	(resetUserNotification)="resetUserNotification()"
+	[accountNotFound]="accountNotFound"
+	[accountNotConfirmed]="accountNotConfirmed"
+	[email]="email"
+></app-user-notification>
