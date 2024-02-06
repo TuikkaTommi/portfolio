@@ -1,3 +1,11 @@
+# Car-rental backend made with Serverless-framework
+
+This is a serverless backend for managing an AWS DynamoDB-database that holds data of car rentals. It sets up the required services on AWS, and provides endpoints for manipulating the data. This project was made for the Backend 2 -course.
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 <!--
 title: 'AWS Simple HTTP Endpoint example in NodeJS'
 description: 'This template demonstrates how to make a simple HTTP API with Node.js running on AWS Lambda and API Gateway using the Serverless Framework.'
