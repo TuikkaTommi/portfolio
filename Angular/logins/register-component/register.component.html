@@ -1,0 +1,223 @@
+<!-- Backdrop styles come from global styles. Backdrop causes the form to be displayed on top of other components -->
+<div class="backdrop" >
+	<div class="bg" (click)="$event.stopPropagation()">
+		<div class="glassbox">
+			<!-- Button to close the edit-window -->
+			<div class="close-button" (click)="changeVisibility()">
+				<img
+					class="close-icon"
+					src="assets\icons\close.svg"
+					alt="close-button"
+				/>
+			</div>
+
+			<h2>Rekisteröidy palvelun käyttäjäksi</h2>
+			<div class="container" *ngIf="!confirmForm">
+				<!-- Content on the left side of the component -->
+				<div class="leftContent">
+					<!-- Form for registration -->
+					<form #f="ngForm" (click)="$event.stopPropagation()">
+						<!-- Input for email -->
+						<label>
+							Sähköposti *
+							<input
+								[ngClass]="{
+									errorinput: invalidSchool
+								}"
+								type="text"
+								required
+								minlength="2"
+								maxlength="45"
+								name="email"
+								[(ngModel)]="email"
+							/>
+						</label>
+
+						<!-- Error that is displayed if user tries to register with an email that is not a schol email -->
+						<p *ngIf="invalidSchool" class="error">
+							Palveluun voi rekisteröityä vain koulun
+							opiskelijasähköpostilla.
+						</p>
+
+						<!-- Input for password -->
+						<label>
+							Salasana *
+							<input
+								[ngClass]="{
+								errorinput: pwError || (pw.errors?.['pattern'] && pw.touched)
+							}"
+								type="password"
+								required
+								pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+								minlength="2"
+								maxlength="45"
+								name="pw"
+								#pw="ngModel"
+								[(ngModel)]="password"
+							/>
+						</label>
+
+						<!-- Error that is displayed if the user did not confirm password correctly -->
+						<p class="error" *ngIf="pwError">
+							Salasanat eivät vastaa toisiaan
+						</p>
+
+						<!-- Error that is displayed if password did not meet the requirements -->
+						<p class="error" *ngIf="pw.errors?.['pattern']">
+							Täytyy sisältää väh. 8 merkkiä, iso kirjain, numero
+							ja erikoismerkki.
+						</p>
+
+						<!-- Input for password confirmation -->
+						<label>
+							Salasana uudelleen *
+							<input
+								[ngClass]="{
+									errorinput: pwError || (pw.errors?.['pattern'] && pw.touched)
+								}"
+								type="password"
+								required
+								pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+								minlength="2"
+								maxlength="45"
+								name="pwconfirm"
+								#pwconfirm="ngModel"
+								[(ngModel)]="passwordconfirm"
+							/>
+						</label>
+
+						<!-- Error that is displayed if the user did not confirm password correctly -->
+						<p class="error" *ngIf="pwError">
+							Salasanat eivät vastaa toisiaan
+						</p>
+					</form>
+				</div>
+				<!-- Content on the right side of the component -->
+				<div class="rightContent">
+					<!-- Error that is displayed if there was an error during registration -->
+					<p *ngIf="registerError" class="error">
+						Virhe rekisteröinnissä.
+					</p>
+
+					<p class="help">
+						Syötä ammattikorkeakoulusi opiskelijasähköpostiosoite,
+						johon lähetämme vahvistuskoodin.
+					</p>
+
+					<!-- Link to open account confirmation-form -->
+					<p class="linktext" (click)="confirmForm = !confirmForm">
+						Vahvista jo luotu tili tästä.
+					</p>
+
+					<!-- Checkbox-input to accept terms of service -->
+					<label class="radiolabel">
+						<input
+							type="checkbox"
+							[checked]="acceptTerms"
+							(change)="acceptTerms = !acceptTerms"
+							required
+						/>
+						Hyväksyn <a routerLink="/termsandconditions" class="linktext">käyttöehdot</a>
+					</label>
+
+					<div>
+						<div class="btnandtxt">
+							<!-- Button to submit the registration form -->
+							<button
+								[disabled]="!f.valid || !acceptTerms"
+								(click)="onSubmit(f.value)"
+								type="submit"
+								class="greenbutton"
+							>
+								Rekisteröidy
+							</button>
+							<div>
+								<!-- Link to open login-form -->
+								<p class="linktext" (click)="showLoginForm()">
+									Onko sinulla jo tili?<br />
+									Kirjaudu sisään tästä
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Form used to confirm a new account -->
+			<div class="confirmcontainer" *ngIf="confirmForm">
+				<p class="help">
+					Syötä 6-numeroinen koodi, jonka lähetimme sinulle
+					sähköpostiisi.
+				</p>
+				<form
+					#confirmForm="ngForm"
+					class="confirmForm"
+					(click)="$event.stopPropagation()"
+				>
+					<!-- Input for email -->
+					<label>
+						Sähköposti *
+						<input
+							type="text"
+							required
+							minlength="2"
+							maxlength="45"
+							name="emailToConfirm"
+							[(ngModel)]="emailToConfirm"
+						/>
+					</label>
+
+					<!-- Input for code -->
+					<label>
+						Koodi *
+						<input
+							type="text"
+							required
+							minlength="6"
+							maxlength="6"
+							name="code"
+							[(ngModel)]="code"
+						/>
+					</label>
+				</form>
+
+				<div>
+					<!-- Error shown if there was an error while confirming the account -->
+					<p *ngIf="confirmError" class="error">
+						Virhe käyttäjätilin vahvistamisessa.
+					</p>
+
+					<div class="btnandtxt">
+						<!-- Button to confirm the account with given information -->
+						<button
+							[disabled]="!confirmForm.valid"
+							(click)="confirmAccount(confirmForm.value)"
+							type="submit"
+							class="greenbutton"
+						>
+							Vahvista käyttäjä
+						</button>
+						<div>
+							<!-- Link to send a new confirmation code for the user -->
+							<p class="linktext" (click)="resendCode()">
+								Etkö saanut koodia?<br />
+								Tarkista roskapostikansio tai tilaa uusi koodi
+								tästä.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Notification popup-component. Receives info about which notification to show,
+	 and which email the confirmation code should be sent to -->
+<app-user-notification
+	*ngIf="accountAlreadyExists"
+	(confirm)="showConfirmForm()"
+	(login)="showLoginForm()"
+	(resetUserNotification)="resetUserNotification()"
+	[accountAlreadyExists]="accountAlreadyExists"
+	[email]="email"
+></app-user-notification>
