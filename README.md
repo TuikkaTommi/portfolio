@@ -55,6 +55,10 @@ Backend created for manipulating a MongoDB database that stores disc golf scores
 
 App that holds a registry of pets, made with PHP. Data is stored in a MySQL database. Admins can add, modify and delete pets in the reqistry, while regular users can only view them. The app has a session based authentication-system. 
 
+### [Angular - managing logins/user-actions]()
+
+The services handle logging in/out of an Angular application, registering a new user, managing and decoding jwt-tokens and managing localstorage. The services interact with a server over http-requests. The login-component holds the login-form and its functionalities.
+
 ### MORE COMING SOON...
 
 ## My contact info 📱
