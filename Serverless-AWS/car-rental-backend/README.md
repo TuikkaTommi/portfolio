@@ -1,6 +1,6 @@
 # Car-rental backend made with Serverless-framework
 
-This is a serverless backend for managing an AWS DynamoDB-database that holds data of car rentals. It sets up the required services on AWS, and provides endpoints for manipulating the data. This project was made for the Backend 2 -course.
+This is a serverless backend for managing an AWS DynamoDB-database that holds data of car rentals. It sets up the required services on AWS, and provides endpoints for manipulating the data. This project was made for the Backend 2 -course. Endpoints that require authorization, are authorized with JWT:s.
 
 
 
