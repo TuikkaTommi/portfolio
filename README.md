@@ -57,7 +57,7 @@ App that holds a registry of pets, made with PHP. Data is stored in a MySQL data
 
 ### [Angular - managing logins/user-actions](https://github.com/TuikkaTommi/portfolio/tree/main/Angular/logins)
 
-The services handle logging in/out of an Angular application, registering a new user, managing and decoding jwt-tokens and managing localstorage. The services interact with a server over http-requests. The login-component holds the login-form and its functionalities and register-component holds the registration-form.
+Part of our Ticorporate project DigiMajakka. The services handle logging in/out of an Angular application, registering a new user, managing and decoding jwt-tokens and managing localstorage. The services interact with a server over http-requests. The login-component holds the login-form and its functionalities and register-component holds the registration-form.
 
 ### [Serverless-framework backend for car-rentals](https://github.com/TuikkaTommi/portfolio/tree/main/Serverless-AWS/car-rental-backend)
 
