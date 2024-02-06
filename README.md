@@ -59,6 +59,10 @@ App that holds a registry of pets, made with PHP. Data is stored in a MySQL data
 
 The services handle logging in/out of an Angular application, registering a new user, managing and decoding jwt-tokens and managing localstorage. The services interact with a server over http-requests. The login-component holds the login-form and its functionalities and register-component holds the registration-form.
 
+### [Serverless-framework backend for car-rentals](https://github.com/TuikkaTommi/portfolio/tree/main/Serverless-AWS/car-rental-backend)
+
+An serverless backend made for the Backend 2 course. Sets up required services on AWS, and provides funtionality for manipulating data of car-rentals in DynamoDB-database. Necessary endpoints use JWT-authorization.
+
 ### MORE COMING SOON...
 
 ## My contact info 📱
