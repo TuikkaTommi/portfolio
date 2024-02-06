@@ -61,7 +61,11 @@ Part of our Ticorporate project DigiMajakka. The services handle logging in/out 
 
 ### [Serverless-framework backend for car-rentals](https://github.com/TuikkaTommi/portfolio/tree/main/Serverless-AWS/car-rental-backend)
 
-An serverless backend made for the Backend 2 course. Sets up required services on AWS, and provides funtionality for manipulating data of car-rentals in DynamoDB-database. Necessary endpoints use JWT-authorization.
+A serverless backend made for the Backend 2 course. Sets up required services on AWS, and provides funtionality for manipulating data of car-rentals in DynamoDB-database. Necessary endpoints use JWT-authorization.
+
+### [TensorFlow.js house pricing calculator](https://github.com/TuikkaTommi/portfolio/tree/main/TensorFlow.js/house_pricing_calculator)
+
+A calculator that predicts house prices. Creates and trains a model with .csv-data, and predicts prices with that model. .csv-data is converted into tensors before training.
 
 ### MORE COMING SOON...
 
