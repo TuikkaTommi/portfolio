@@ -74,5 +74,4 @@ A calculator that predicts house prices. Creates and trains a model with .csv-da
 
 Tommi Tuikka <br>
 Email: tommi.tuikka@outlook.com <br>
-Student email: N5008@student.jamk.fi <br>
 LinkedIn: https://www.linkedin.com/in/tuikkatommi/
