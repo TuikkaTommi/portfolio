@@ -11,7 +11,7 @@ I'm currently studying web-development at [JAMK University of Applied Sciences](
 
 ## About me ⛷️
 
-I'm on the last stretch of my studies, and I have gathered a wide set of skills on web-developmnet during that time. I've specialized myself in fullstack-development, mainly on JavaScript and its relating technologies.
+I'm on the last stretch of my studies, and I have gathered a wide set of skills on web-development during that time. I've specialized myself in fullstack-development, mainly on JavaScript and its relating technologies.
 
 ## Skills 💻
 
