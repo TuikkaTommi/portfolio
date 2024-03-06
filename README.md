@@ -68,7 +68,7 @@ A serverless backend made for the Backend 2 course. Sets up required services on
 
 A calculator that predicts house prices. Creates and trains a model with .csv-data, and predicts prices with that model. .csv-data is converted into tensors before training.
 
-### [Python Coin collection game](https://github.com/TuikkaTommi/portfolio/tree/main/Python/RoboGame)
+### [Python Coin collecting game](https://github.com/TuikkaTommi/portfolio/tree/main/Python/RoboGame)
 
 A simple game made with Python, using the pygame-library, where the player controls a robot and tries to collect coins while avoiding monsters. 
 
