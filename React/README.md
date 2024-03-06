@@ -34,7 +34,7 @@ In the user-model also the passwordHash-field is removed for security reasons.
 
 ### Controllers
 
-Inside the server, there are four controllers one for blogs, one for logins, one for users and one for testing purposes.
+Inside the server, there are four controllers; one for blogs, one for logins, one for users and one for testing purposes.
 
 The [blog-controller](https://github.com/TuikkaTommi/portfolio/blob/main/React/bloglist-backend/controllers/blogs.js) handles functionalities for managing blogs. There are routes for getting blogs, addding and updating blogs, adding a comment to a blog and deleting blogs.
 
