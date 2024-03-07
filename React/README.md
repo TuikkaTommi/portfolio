@@ -279,4 +279,6 @@ const store = configureStore({
 });
 ```
 
-Reducers are inside the [src/reducers](https://github.com/TuikkaTommi/portfolio/tree/main/React/bloglist-frontend-redux/src/reducers) directory. The reducers are separated into separate files by their purpose. All the reducers implement createSlice-method from '@reduxjs/toolkit'-library. The slice and its methods handle actually altering the state. The reducer-files then have separate methods that readies the data to be set to the state. For example one of these methods adds +1 like to an existing blog in the state when a blog is liked, and then sets it to state with the slices method. 
+Reducers are inside the [src/reducers](https://github.com/TuikkaTommi/portfolio/tree/main/React/bloglist-frontend-redux/src/reducers) directory. The reducers are separated into separate files by their purpose. All the reducers implement createSlice-method from '@reduxjs/toolkit'-library. The slice and its methods handle actually altering the state. The reducer-files then have separate methods that readies the data to be set to the state. For example one of these methods adds +1 like to an existing blog in the state when a blog is liked, and then sets it to state with the slices method.
+
+WILL CONTINUE SOON™️..
