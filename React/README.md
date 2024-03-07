@@ -163,3 +163,9 @@ router.post('/reset', async (request, response) => {
 Middlewares are inside the [/utils/middleware.js](https://github.com/TuikkaTommi/portfolio/blob/main/React/bloglist-backend/utils/middleware.js) file. Middlewares are built as separate funtions inside the file, and then exported, so they are available for the controllers. There exists middlewares for logging a request, notifying about an unknown endpoint, handling errors, getting token from a request and extracting an user from a request.
 
 Middlewares that log something into the console use a [helper-file](https://github.com/TuikkaTommi/portfolio/blob/main/React/bloglist-backend/utils/logger.js), that logs given parameters into the console.
+
+## React frontend
+
+The frontend of this application is made with React and it uses react-redux for handling its main state-management and react-bootstrap for styling. The basic structure of the frontend consists of components, reducers, services, [root-file app.js](https://github.com/TuikkaTommi/portfolio/blob/main/React/bloglist-frontend-redux/src/App.js) and a store.
+
+CONTINUE ->
