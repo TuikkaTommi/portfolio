@@ -1,6 +1,6 @@
 # Fullstack Bloglist app
 
-This app was made for the Fullstack-open course. This app manages a list of blogs, that users can add. The blogs can be viewed, liked and commented by other users. The creator of the blog can also remove it. The apps architecture consists of MongoDB-database running on MongoDB Atlas, a server made with Express and a frontend made with React. The server is inside [bloglist-backend](https://github.com/TuikkaTommi/portfolio/tree/main/React/bloglist-backend) folder and the frontend is inside [bloglist-frontend-redux](https://github.com/TuikkaTommi/portfolio/tree/main/React/bloglist-frontend-redux) folder. 
+This app was made for the Fullstack-open course by University of Helsinki. This app manages a list of blogs, that users can add. The blogs can be viewed, liked and commented by other users. The creator of the blog can also remove it. The apps architecture consists of MongoDB-database running on MongoDB Atlas, a server made with Express and a frontend made with React. The server is inside [bloglist-backend](https://github.com/TuikkaTommi/portfolio/tree/main/React/bloglist-backend) folder and the frontend is inside [bloglist-frontend-redux](https://github.com/TuikkaTommi/portfolio/tree/main/React/bloglist-frontend-redux) folder. 
 
 
 ## Server
@@ -168,4 +168,115 @@ Middlewares that log something into the console use a [helper-file](https://gith
 
 The frontend of this application is made with React and it uses react-redux for handling its main state-management and react-bootstrap for styling. The basic structure of the frontend consists of components, reducers, services, [root-file app.js](https://github.com/TuikkaTommi/portfolio/blob/main/React/bloglist-frontend-redux/src/App.js) and a store.
 
-CONTINUE ->
+### Services
+
+The services handle making requests to the server and serve that data to the rest of the application. There are three services; one for blogs, one for logging in and one for user-related functionalities. The services have methods that create http-requests to the server with axios. For example in the [blog-service](https://github.com/TuikkaTommi/portfolio/blob/main/React/bloglist-frontend-redux/src/services/blogs.js) a new blog is sent to the server with the following method:
+
+
+```
+const create = async (newBlog) => {
+  // console.log(token);
+  const config = {
+    headers: { Authorization: token },
+  };
+
+  const response = await axios.post(baseUrl, newBlog, config);
+  console.log(response);
+  return response.data;
+};
+
+```
+
+The method takes a blog-object and puts it into the body of a post-request and sends it to the servers endpoint with the users jwt-token in the header.
+
+### Components
+
+Basically all parts of the app are done inside their own components, and the root-file only dictates where and when those components are displayed. Components are inside the [src/components](https://github.com/TuikkaTommi/portfolio/tree/main/React/bloglist-frontend-redux/src/components) directory.
+
+As an example the list of blogs is implemented with two components. [Blog-component](https://github.com/TuikkaTommi/portfolio/blob/main/React/bloglist-frontend-redux/src/components/Blog.js) handles displaying a single blog, while [BlogList-component](https://github.com/TuikkaTommi/portfolio/blob/main/React/bloglist-frontend-redux/src/components/BlogList.js) is its parent and uses it to display the blogs as a list. The BlogList-component receives all the blogs as a prop, and then those blogs use map to create Blog-components for each of them. Data of the specific blog is sent as a prop to the child component. The funtions for liking and deleting a blog are also given to the Blog-component as props.
+
+The funtionality for creating singular blogs is implemented in the following way inside the BlogList-component:
+
+```
+<ListGroup className="mt-4">
+      {blogs
+        .sort((a, b) => b.likes - a.likes)
+        .map((blog) => (
+          <Blog
+            key={blog.id}
+            blog={blog}
+            addLike={() => addLike(blog.id, blog)}
+            deleteBlog={() => deleteBlog(blog)}
+            user={user}
+          />
+        ))}
+    </ListGroup>
+```
+
+Another note-worthy component is the [Togglable-component](https://github.com/TuikkaTommi/portfolio/blob/main/React/bloglist-frontend-redux/src/components/Togglable.js) that allows toggling the visibility of its child-components.
+
+The component has a state for the visibility status, made with useState():
+
+```
+const [visible, setVisible] = useState(false);
+```
+
+Then there are two styles for setting the style to either visible or hidden based on that status:
+
+```
+const hideWhenVisible = { display: visible ? 'none' : '' };
+const showWhenVisible = { display: visible ? '' : 'none' };
+```
+
+toggleVisibility() -funtion toggles the value in state and is provided for use outside this component with useImperativeHandle(), so that the toggling can be done from the parent-component:
+
+
+```
+  const toggleVisibility = () => {
+    setVisible(!visible);
+  };
+```
+
+```
+  useImperativeHandle(ref, () => {
+    return {
+      toggleVisibility,
+    };
+  });
+```
+
+A toggle-button and the togglable children are finally displayed in the following way:
+
+```
+<div>
+      <div style={hideWhenVisible}>
+        <Button id={props.id} onClick={toggleVisibility}>
+          {props.buttonLabel}
+        </Button>
+      </div>
+      <div style={showWhenVisible}>
+        {props.children}
+        <Button id="cancel" variant="secondary" onClick={toggleVisibility}>
+          Cancel
+        </Button>
+      </div>
+    </div>
+  );
+```
+
+### State-management
+
+The state-management of this app is a combination of useState for local state and 'react-redux'-library for global state. For the reducers there is [a store-file](https://github.com/TuikkaTommi/portfolio/blob/main/React/bloglist-frontend-redux/src/store.js), that configures a store that contains all the reducers:
+
+```
+const store = configureStore({
+  reducer: {
+    notification: notificationReducer,
+    blogs: blogReducer,
+    user: userReducer,
+    userList: userListReducer,
+  },
+});
+```
+
+Reducers are inside the [src/reducers](https://github.com/TuikkaTommi/portfolio/tree/main/React/bloglist-frontend-redux/src/reducers) directory. The reducers are separated into separate files by their purpose. All the reducers implement createSlice-method from '@reduxjs/toolkit'-library. The slice and its methods handle actually altering the state. The reducer-files then have separate methods that readies the data to be set to the state. For example one of these methods adds +1 like to an existing blog in the state when a blog is liked, and then sets it to state with the slices method. 
