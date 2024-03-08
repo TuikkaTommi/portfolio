@@ -40,6 +40,10 @@ I'm on the last stretch of my studies, and I have gathered a wide set of skills 
 
 ## Projects 🔧
 
+### [BlogList app made with MERN-stack](https://github.com/TuikkaTommi/portfolio/tree/main/React)
+
+A fullstack application that holds a list of blogs. Users can add new blogs, like and comment on other peoples blogs and delete their own. The app features user-authentication that uses jwt-tokens.
+
 ### [FribaScore frontend for disc golf, made with Svelte](https://github.com/TuikkaTommi/portfolio/tree/main/Svelte/fribascore)
 
 This was a project for the Frontend basics course. The main focus was on learning Svelte-framework and its component-structures and basic usage of stores. The app allows the user to save, view and delete their disc golf rounds.
