@@ -329,5 +329,6 @@ const addBlog = (blogObject) => {
 
 The [blogForm-component](https://github.com/TuikkaTommi/portfolio/blob/main/React/bloglist-frontend-redux/src/components/BlogForm.js) takes users inputs, sets them to local state and creates an object from them. This blog is then sent to the method in App.js that was received in the form-component as a prop.
 
+Similar reducers and processes also exist for manipulating notifications and users in the applications state.
 
 
