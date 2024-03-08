@@ -281,4 +281,53 @@ const store = configureStore({
 
 Reducers are inside the [src/reducers](https://github.com/TuikkaTommi/portfolio/tree/main/React/bloglist-frontend-redux/src/reducers) directory. The reducers are separated into separate files by their purpose. All the reducers implement createSlice-method from '@reduxjs/toolkit'-library. The slice and its methods handle actually altering the state. The reducer-files then have separate methods that readies the data to be set to the state. For example one of these methods adds +1 like to an existing blog in the state when a blog is liked, and then sets it to state with the slices method.
 
-WILL CONTINUE SOON™️..
+The reducer for adding a new blog to state is created inside blogSlice in the following way: 
+
+```
+const blogSlice = createSlice({
+  name: 'blogs',
+  initialState: [],
+  reducers: {
+    appendBlog(state, action) {
+      state.push(action.payload);
+    },
+    // .....
+  },
+});
+```
+
+This reducer can then be used by dispatching its action. BlogReducer.js has a helper function 'createBlog()' that creates a new blog through the server, and if it succeeds, it calls the reducer:
+
+```
+export const createBlog = (blog) => {
+  return async (dispatch) => {
+    const newBlog = await blogService.create(blog);
+    dispatch(appendBlog(newBlog));
+  };
+};
+```
+
+A method in [App.js](https://github.com/TuikkaTommi/portfolio/blob/main/React/bloglist-frontend-redux/src/App.js) receives the blog from a form-component and then sends it to the helper function and also dispatches a notification:
+
+```
+const addBlog = (blogObject) => {
+    // Hide the blog form by toggling the visibility of togglable-component through ref
+    blogFormRef.current.toggleVisibility();
+
+    // Dispatch createblog() action with the new blog object
+    dispatch(createBlog(blogObject)).then(() => {
+      // Dispatch a notification
+      dispatch(
+        setNotification(
+          `A new blog '${blogObject.title}' by ${blogObject.author} added`,
+          4
+        )
+      );
+    });
+  };
+```
+
+The [blogForm-component](https://github.com/TuikkaTommi/portfolio/blob/main/React/bloglist-frontend-redux/src/components/BlogForm.js) takes users inputs, sets them to local state and creates an object from them. This blog is then sent to the method in App.js that was received in the form-component as a prop.
+
+
+
