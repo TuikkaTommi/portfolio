@@ -7,11 +7,11 @@
 
 This is a (slightly WIP) portfolio-repository for my web-development career. Different technologies have their own directories with the projects inside them and a list of these projects can be found [here](#projects-).
 
-I'm currently studying web-development at [JAMK University of Applied Sciences](https://www.jamk.fi/en), and I'm looking for internship- and job-opportunities.
+I'm currently studying web-development at [JAMK University of Applied Sciences](https://www.jamk.fi/en), and I'm looking for internship- and job-opportunities that can help me develop myself as a professional.
 
 ## About me ⛷️
 
-I'm on the final stretch of my studies, and I have gathered a wide set of skills on web-development during that time. I've specialized myself in fullstack-development, mainly on JavaScript and its relating technologies. I work well both independently and within a team. I put effort into communicating clearly, so that everyone is on the same page. I really like to take on new challenges, and solving a new problem is extremely rewarding for me. 
+I'm on the final stretch of my studies, and I have gathered a wide set of skills on web-development during that time. I've specialized myself in fullstack-development, mainly on JavaScript and its relating technologies. I work well both independently and within a team, and I put effort into communicating clearly, so that everyone is on the same page. I really like to take on new challenges, and solving a new problem is extremely rewarding for me.
 
 ## Skills 💻
 
