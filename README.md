@@ -1,11 +1,11 @@
-# Portfolio - WIP 🖥️
+# Portfolio 🖥️
 
 [About me](#about-me-%EF%B8%8F)
 [Skills](#skills-)
 [Projects](#projects-)
 [Contact info](#my-contact-info-)
 
-This is a (WIP) portfolio-repository for my web-development career. Different technologies have their own directories with the projects inside them and a list of these projects can be found [here](#projects-).
+This is a (slightly WIP) portfolio-repository for my web-development career. Different technologies have their own directories with the projects inside them and a list of these projects can be found [here](#projects-).
 
 I'm currently studying web-development at [JAMK University of Applied Sciences](https://www.jamk.fi/en), and I'm looking for internship- and job-opportunities.
 
