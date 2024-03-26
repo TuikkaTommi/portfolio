@@ -42,7 +42,7 @@ I'm on the final stretch of my studies, and I have gathered a wide set of skills
 
 ## Projects 🔧
 
-### [BlogList app made with MERN-stack](https://github.com/TuikkaTommi/portfolio/tree/main/React)
+### [BlogList app - MERN-stack](https://github.com/TuikkaTommi/portfolio/tree/main/React)
 
 A fullstack application that holds a list of blogs. Users can add new blogs, like and comment on other peoples blogs and delete their own. The app features user-authentication that uses jwt-tokens.
 
