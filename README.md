@@ -5,13 +5,13 @@
 [Projects](#projects-)
 [Contact info](#my-contact-info-)
 
-This is a (WIP) portfolio-repository for my web-development related projects. Different technologies have their own directories with the projects inside them.
+This is a (WIP) portfolio-repository for my web-development career. Different technologies have their own directories with the projects inside them and a list of these projects can be found [here](#projects-).
 
 I'm currently studying web-development at [JAMK University of Applied Sciences](https://www.jamk.fi/en), and I'm looking for internship- and job-opportunities.
 
 ## About me ⛷️
 
-I'm on the last stretch of my studies, and I have gathered a wide set of skills on web-development during that time. I've specialized myself in fullstack-development, mainly on JavaScript and its relating technologies. I'm an independent worker, but i also work well within a team and put effort into keeping the teams communication clear, so everyone is on the same page. I really like to take on new challenges, and learn new things. 
+I'm on the final stretch of my studies, and I have gathered a wide set of skills on web-development during that time. I've specialized myself in fullstack-development, mainly on JavaScript and its relating technologies. I work well both independently and within a team. I put effort into communicating clearly, so that everyone is on the same page. I really like to take on new challenges, and solving a new problem is extremely rewarding for me. 
 
 ## Skills 💻
 
