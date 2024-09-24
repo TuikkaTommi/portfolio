@@ -17,6 +17,7 @@ I'm on the final stretch of my studies, and I have gathered a wide set of skills
 
 - Programming languages:
   - JavaScript
+  - TypeScript
   - Python
   - PHP
 - Frontend-development
