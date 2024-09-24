@@ -20,23 +20,23 @@ I'm on the final stretch of my studies, and I have gathered a wide set of skills
   - TypeScript
   - Python
   - PHP
-- Frontend-development
+- Frontend-development:
   - Angular
   - React
   - Svelte
   - HTML
   - CSS
   - Figma
-- Backend-development
-  - Node.js
-  - Express
-- Databases
+- Backend-development:
+  - NodeJS
+  - ExpressJS
+- Databases:
   - MySQL
   - MongoDB
-- Cloud-services
+- Cloud-services:
   - AWS
   - Serverless framework
-- Others
+- Other tools:
   - Basics of TensorFlow.js
   - VSCode
   - Git
