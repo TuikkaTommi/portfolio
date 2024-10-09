@@ -49,7 +49,7 @@ I'm on the final stretch of my studies, and I have gathered a wide set of skills
 
 NoteManager is a full stack web application for managing notes. Logged in users can view, add, delete and modify their notes. The notes have a title, description and a priority. Higher priority notes are displayed first, and they are displayed with different colors.
 
-### DigiMajakka [Angular - managing logins/user-actions](https://github.com/TuikkaTommi/portfolio/tree/main/Angular/logins)
+### DigiMajakka
 
 **Technologies**: TypeScript, Angular, JWT
 
