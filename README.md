@@ -43,6 +43,12 @@ I'm on the final stretch of my studies, and I have gathered a wide set of skills
 
 ## Projects 🔧
 
+### [NoteManager](https://github.com/TuikkaTommi/NoteManager)
+
+**Technologies**: JavaScript, HTML, CSS, EpressJS, MySQL
+
+NoteManager is a full stack web application for managing notes. Logged in users can view, add, delete and modify their notes. The notes have a title, description and a priority. Higher priority notes are displayed first, and they are displayed with different colors.
+
 ### [BlogList app - MERN-stack](https://github.com/TuikkaTommi/portfolio/tree/main/React)
 
 **Technologies**: JavaScript, React, Express.js, MongoDB
