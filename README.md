@@ -49,6 +49,12 @@ I'm on the final stretch of my studies, and I have gathered a wide set of skills
 
 NoteManager is a full stack web application for managing notes. Logged in users can view, add, delete and modify their notes. The notes have a title, description and a priority. Higher priority notes are displayed first, and they are displayed with different colors.
 
+### DigiMajakka [Angular - managing logins/user-actions](https://github.com/TuikkaTommi/portfolio/tree/main/Angular/logins)
+
+**Technologies**: TypeScript, Angular, JWT
+
+DigiMajakka is a platform for students to find small jobs during their studies. It was created as a part of our schools half a year Ticorporate project, where I worked as a frontend developer. Students can create profiles, that hold information about their skills and what they are looking for. Possible employers can browse the student-profiles and post their job listings to the platform. My work focused on the student-profiles, and user-management on the frontend. Some of the services and components for account creation and logins, that I made, [can be found here.](https://github.com/TuikkaTommi/portfolio/tree/main/Angular/logins)
+
 ### [BlogList app - MERN-stack](https://github.com/TuikkaTommi/portfolio/tree/main/React)
 
 **Technologies**: JavaScript, React, Express.js, MongoDB
@@ -78,12 +84,6 @@ Backend created for manipulating a MongoDB database that stores disc golf scores
 **Technologies**: PHP, MySQL
 
 App that holds a registry of pets, made with PHP. Data is stored in a MySQL database. Admins can add, modify and delete pets in the reqistry, while regular users can only view them. The app has a session based authentication-system. 
-
-### [Angular - managing logins/user-actions](https://github.com/TuikkaTommi/portfolio/tree/main/Angular/logins)
-
-**Technologies**: TypeScript, Angular, JWT
-
-Part of our Ticorporate project DigiMajakka. The services handle logging in/out of an Angular application, registering a new user, managing and decoding jwt-tokens and managing localstorage. The services interact with a server over http-requests. The login-component holds the login-form and its functionalities and register-component holds the registration-form.
 
 ### [Serverless-framework backend for car-rentals](https://github.com/TuikkaTommi/portfolio/tree/main/Serverless-AWS/car-rental-backend)
 
