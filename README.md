@@ -5,13 +5,13 @@
 [Projects](#projects-)
 [Contact info](#my-contact-info-)
 
-This is a (slightly WIP) portfolio-repository for my web-development career. Different technologies have their own directories with the projects inside them and a list of these projects can be found [here](#projects-).
+This is a (slightly WIP) portfolio-repository for my career as a software developer. A list of my projects can be found [here](#projects-).
 
-I'm currently studying web-development at [JAMK University of Applied Sciences](https://www.jamk.fi/en), and I'm looking for internship- and job-opportunities that can help me develop myself as a professional.
+I'm currently studying web-development at [JAMK University of Applied Sciences](https://www.jamk.fi/en), and I'm looking for internship- and job-opportunities to launch my professional career.
 
 ## About me ⛷️
 
-I'm on the final stretch of my studies, and I have gathered a wide set of skills on web-development during that time. I've specialized myself in fullstack-development, mainly on JavaScript and its relating technologies. I am an independent worker, and I have great self-management skills, but I also work well within a team. I love solving problems and challenging myself with new things. I also really like learning new skills, and do so constantly. During development, I put effort into keeping the code as clear and readable as possible, so that we as a group can work efficiently. I also follow this rule with general communication within the team, as it is a key component in a successful software project. I also want to help others with the problems they are facing, whenever I’m able to.
+I'm on the final stretch of my studies, and I have gathered a wide set of skills on web-development during that time. I've specialized myself in fullstack-development, mainly on JavaScript and its relating technologies. As a developer, I am an independent worker, and have great self-management skills, but I also work well within a team. I love solving problems and challenging myself with new things. I also really like learning new skills, and do so constantly. I have a strong drive to produce high quality, maintainable code, for example with reusability and clarity of code, and efficient documentation. I also pay attention to clarity and efficiency within general communication in a dev-team, as I believe it is a key component for successful teamwork.
 
 ## Skills 💻
 
