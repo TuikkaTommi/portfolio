@@ -171,7 +171,21 @@ Similar reducers and processes also exist for manipulating notifications and use
 
 ## Server
 
-The server was built with Express.js and consists of models, controllers, middlewares and the [main server-file](https://github.com/TuikkaTommi/portfolio/blob/main/React/bloglist-backend/app.js). 
+The server was built with Express.js and consists of models, controllers, middlewares and the [main server-file](https://github.com/TuikkaTommi/portfolio/blob/main/React/bloglist-backend/app.js). Server provides the following endpoints for interacting with the backend:
+
+Blogs:
+- GET /blogs/ - provides list of all blogs
+- POST /blogs/ - endpoint for adding a new blog. Authenticated with JWT
+- PUT /blogs/:id - update a blog with given id
+- POST /blogs/:id/comments - add a comment to a blog with given id
+- DELETE /blogs/:id - deletes a blog with given id
+
+Users:
+- GET /users/ - provides list of all users, and their blogs
+- POST /users/ - create new user
+
+Login:
+- POST /login/ - validates credentials, and provides a JWT token for the user
 
 ### Models
 
