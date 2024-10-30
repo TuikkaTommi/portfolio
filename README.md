@@ -89,7 +89,7 @@ App that holds a registry of pets, made with PHP. Data is stored in a MySQL data
 
 **Technologies**: JavaScript, AWS, Serverless-framework, JWT
 
-A serverless backend made for the Backend 2 course. Sets up required services on AWS, and provides funtionality for manipulating data of car-rentals in DynamoDB-database. Necessary endpoints use JWT-authorization.
+A serverless backend that holds simple features for a mocked car-rental service. It sets up required services on AWS, and provides funtionality for manipulating data of car-rentals in DynamoDB-database. Necessary endpoints use JWT-authorization.
 
 ### [TensorFlow.js house pricing calculator](https://github.com/TuikkaTommi/portfolio/tree/main/TensorFlow.js/house_pricing_calculator)
 
