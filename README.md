@@ -65,7 +65,7 @@ A fullstack application that holds a list of blogs. Users can add new blogs, lik
 
 **Technologies**: JavaScript, Svelte
 
-This was a project for the Frontend basics course. The main focus was on learning Svelte-framework and its component-structures and basic usage of stores. The app allows the user to save, view and delete their disc golf rounds.
+This is an application for keeping track of rounds of disc golf. The app allows the user to save, view and delete their disc golf rounds.
 
 ### [FribaScore frontend app, but implemented with Angular](https://github.com/TuikkaTommi/portfolio/tree/main/Angular/fribascore)
 
