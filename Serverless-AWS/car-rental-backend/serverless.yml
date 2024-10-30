@@ -106,7 +106,7 @@ functions:
           method: get
           authorizer: PrivateAuthorizer # suojaus
 
-  deleteRental: # Vuokrausten haku rekisterinumerolla. Suojattu funktio ja reitti.
+  deleteRental: # Vuokrauksen poistaminen. Suojattu funktio ja reitti.
     handler: customer/deleterental.handler
     events:
       - httpApi:
