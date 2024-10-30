@@ -85,7 +85,7 @@ Backend created for manipulating a MongoDB database that stores disc golf scores
 
 App that holds a registry of pets, made with PHP. Data is stored in a MySQL database. Admins can add, modify and delete pets in the reqistry, while regular users can only view them. The app has a session based authentication-system. 
 
-### [Serverless-framework backend for car-rentals](https://github.com/TuikkaTommi/portfolio/tree/main/Serverless-AWS/car-rental-backend)
+### [Serverless backend for car-rentals](https://github.com/TuikkaTommi/portfolio/tree/main/Serverless-AWS/car-rental-backend)
 
 **Technologies**: JavaScript, AWS, Serverless-framework, JWT
 
